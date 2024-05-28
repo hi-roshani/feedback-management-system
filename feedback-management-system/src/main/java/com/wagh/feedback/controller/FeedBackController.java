@@ -29,7 +29,8 @@ public class FeedBackController {
 
     @GetMapping("/feedback/get/{id}")
     public List<FeedBack> getByID(@PathVariable long id){
-        return feedBackRepository.findAllById(id);
+
+        return feedBackRepository.findById(id);
     }
 
     @PostMapping("/feedback/write")
