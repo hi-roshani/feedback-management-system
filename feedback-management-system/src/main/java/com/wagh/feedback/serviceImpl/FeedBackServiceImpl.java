@@ -2,7 +2,7 @@ package com.wagh.feedback.serviceImpl;
 
 import com.wagh.feedback.dto.FeedBackDTO;
 import com.wagh.feedback.dto.ResponseDTO;
-import com.wagh.feedback.entity.FeedBack;
+import com.wagh.feedback.entity.FeedBackEntity;
 import com.wagh.feedback.repository.FeedBackRepository;
 import com.wagh.feedback.service.FeedBackService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,17 +18,17 @@ public class FeedBackServiceImpl implements FeedBackService {
     FeedBackRepository feedBackRepository;
 
     @Override
-    public List<FeedBack> getFeedBacks() {
+    public List<FeedBackEntity> getFeedBacks() {
         return feedBackRepository.findAll();
     }
 
     @Override
     public ResponseDTO createFeedBack(FeedBackDTO feedBackDTO) {
-        FeedBack feedBack = new FeedBack();
+        FeedBackEntity feedBack = new FeedBackEntity();
 
         feedBack.setUserId(feedBackDTO.getUserId());
         feedBack.setComments(feedBackDTO.getComments());
-        feedBack.setRatings(feedBack.getRatings());
+        feedBack.setRatings(feedBackDTO.getRatings());
         feedBackRepository.save(feedBack);
 
         ResponseDTO responseDTO = new ResponseDTO();

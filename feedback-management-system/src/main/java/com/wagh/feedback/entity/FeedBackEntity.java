@@ -11,7 +11,7 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name="feedback")
-public class FeedBack {
+public class FeedBackEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +21,8 @@ public class FeedBack {
     private Long userId;
 
     @Column(name="comment")
-    @Size(min = 5, message = "Comment should have at least 5 characters")
-    @Size(max = 200, message = "Character limit exceeded")
+//    @Size(min = 5, message = "Comment should have at least 5 characters")
+//    @Size(max = 200, message = "Character limit exceeded")
     private String comments;
 
     @Column(name="ratings", nullable = false)
