@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "5de56f0f-6f95-4437-a200-73ca555638ae",
+		"name": "feedback-management-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35073854"
+	},
+	"item": [
+		{
+			"name": "write-feedback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":1,\r\n    \"comments\":\"very nice\",\r\n    \"ratings\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9003/feedback/write"
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9003/feedback/get/6"
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9003/feedback/get"
+			},
+			"response": []
+		}
+	]
+}
